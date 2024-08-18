@@ -10,9 +10,8 @@ const sendShieldedQuery = async (provider, destination, data) => {
   });
   return await decryptNodeResponse(rpclink, response, usedEncryptedKey);
 };
-
 async function main() {
-  const contractAddress ="0x31884BE7D0316295863AFAeEC4Aed673FBE6f10c";
+  const contractAddress = "0x606276dAF46C16bc1E91eD92659B9453D94cDB71";
   const [signer] = await hre.ethers.getSigners();
   const contractFactory = await hre.ethers.getContractFactory("Swisstronik");
   const contract = contractFactory.attach(contractAddress);
@@ -25,3 +24,4 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
